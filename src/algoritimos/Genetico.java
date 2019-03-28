@@ -1,6 +1,7 @@
 package algoritimos;
 
 import java.util.Random;
+import util.Util;
 
 public class Genetico {
     public final static int SIZE = 100;
@@ -9,7 +10,7 @@ public class Genetico {
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
         Random r = new Random();
-        int[] cargas = util.Util.geraCarga(SIZE);
+        int[] cargas = Util.geraCarga(SIZE);
         int[][] populacao = new int [TAM][SIZE+1];
         int[][] populacaoIntermediaria = new int [TAM][SIZE+1];
 
@@ -37,7 +38,7 @@ public class Genetico {
         printaVetor(cargas);
         System.out.println(populacao[0][SIZE]);
         System.out.println(" ");
-        util.Util.printSolucao(populacao[0], cargas);
+        Util.printSolucao(populacao[0], cargas);
         long endTime = System.currentTimeMillis();
         long duration = (endTime - startTime);
         System.out.println("Duration: " + duration);

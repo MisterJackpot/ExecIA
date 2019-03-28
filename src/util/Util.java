@@ -42,4 +42,26 @@ public class Util {
         return aux;
     }
 
+    public static int funcaoDeAptidao(int[] linha, int[] cargas) {
+        int somaZero = 0;
+        int somaUm = 0;
+        int i;
+        for(i = 0; i<linha.length; i++) {
+            if(linha[i]==0) {
+                somaZero+=cargas[i];
+            } else {
+                somaUm+=cargas[i];
+            }
+        }
+        return Math.abs(somaZero - somaUm);
+    }
+
+    public static void printaVetor(int[] populacao) {
+
+        for(int j = 0; j < populacao.length; j++) {
+            System.out.print(populacao[j] + " ");
+        }
+        System.out.println();
+    }
+
 }
