@@ -1,3 +1,5 @@
+package algoritimos;
+
 import java.util.Random;
 
 //Gabriel Löff e Gabriel Weich
@@ -8,7 +10,7 @@ public class Tempera {
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
         Random r = new Random();
-        int[] cargas = Util.geraCarga(SIZE);
+        int[] cargas = util.Util.geraCarga(SIZE);
         int[] noAtual = new int [SIZE];
         int[] noProximo = new int [SIZE];
         double T = 200;
@@ -43,7 +45,7 @@ public class Tempera {
         printaVetor(cargas);
         System.out.println("Distribuição: " + funcaoDeAptidao(noAtual, cargas));
         System.out.println(" ");
-        Util.printSolucao(noAtual,cargas);
+        util.Util.printSolucao(noAtual,cargas);
 
         long endTime = System.currentTimeMillis();
         long duration = (endTime - startTime);

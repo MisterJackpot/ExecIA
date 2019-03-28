@@ -1,3 +1,5 @@
+package algoritimos;
+
 import java.util.Random;
 
 public class Genetico {
@@ -7,7 +9,7 @@ public class Genetico {
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
         Random r = new Random();
-        int[] cargas = Util.geraCarga(SIZE);
+        int[] cargas = util.Util.geraCarga(SIZE);
         int[][] populacao = new int [TAM][SIZE+1];
         int[][] populacaoIntermediaria = new int [TAM][SIZE+1];
 
@@ -35,7 +37,7 @@ public class Genetico {
         printaVetor(cargas);
         System.out.println(populacao[0][SIZE]);
         System.out.println(" ");
-        Util.printSolucao(populacao[0], cargas);
+        util.Util.printSolucao(populacao[0], cargas);
         long endTime = System.currentTimeMillis();
         long duration = (endTime - startTime);
         System.out.println("Duration: " + duration);
@@ -151,8 +153,7 @@ public class Genetico {
         int cont = 0;
         for(int i=0; i<TAM; i++) if(populacao[i][SIZE] == populacao[melhor][SIZE]) cont++;
         double perc = cont*100.0/TAM;
-        if(perc>99) return true;
-        return false;
+        return perc>98;
     }
 
 }
