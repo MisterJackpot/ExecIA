@@ -8,7 +8,7 @@ public class HillClimbing {
 
     public final static int SIZE = 100;
 
-    public static void main(String args[]){
+    public static void main(String[] args){
         long startTime = System.currentTimeMillis();
         Random r = new Random();
         int[] cargas = Util.geraCarga(SIZE);
